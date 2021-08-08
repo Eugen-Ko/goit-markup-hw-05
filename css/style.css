@@ -102,7 +102,8 @@ Background color
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.logo:hover {
+.logo:hover,
+.logo:focus {
   -webkit-transform: scale(1.2);
 }
 
@@ -117,7 +118,7 @@ Background color
 
 .site-nav-link {
   color: var(--title-text-color);
-  font-weight: 500;
+  font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -132,18 +133,10 @@ Background color
 .site-nav-link:hover,
 .site-nav-link:focus {
   color: var(--links-color);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
 }
 
 .site-nav-link.current {
   color: var(--links-color);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
 }
 
 .site-nav-link-wrap {
@@ -175,7 +168,6 @@ opacity: 1;
   line-height: 16px;
   letter-spacing: 0.02em;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 
 .header-contacts li:not(:first-child) {
@@ -188,12 +180,6 @@ opacity: 1;
 
 .header-contacts .contact:hover,
 .header-contacts .contact:focus {
-  margin: 0;
-  color: var(--links-color);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.02em;
   color: var(--links-color);
 }
 
@@ -253,7 +239,8 @@ opacity: 1;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-button:hover {
+.hero-button:hover,
+.hero-button:focus {
   box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
 }
 
@@ -319,15 +306,10 @@ opacity: 1;
   text-align: center;
   letter-spacing: 0.03em;
 }
-/* 
-.we-doing li {
-  width: 370px;
-} */
 
 .we-doing li:not(:last-child) {
   margin-right: 30px;
 }
-
 
 .we-doing-image {
   position: relative;
@@ -347,7 +329,6 @@ opacity: 1;
 font-family: Roboto;
 font-weight: 400;
 font-size: 14px;
-/* line-height: 16px; */
 text-align: center;
 letter-spacing: 0.03em;
 text-transform: uppercase;
@@ -383,7 +364,7 @@ text-transform: uppercase;
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 .worker .profession {
   margin: 0;
@@ -391,7 +372,7 @@ text-transform: uppercase;
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .social-links {
@@ -417,7 +398,7 @@ text-transform: uppercase;
   border-radius: 50%;
   color: var(--icon-color);
   
-  transition: background-color, color, box-shadow, 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -468,7 +449,7 @@ text-transform: uppercase;
   color: var(--icon-color);
   border: 1px solid var(--icon-color);
   border-radius: 4px;
-  transition: color, border, 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -602,7 +583,7 @@ text-transform: uppercase;
   cursor: pointer;
   padding: 6px 22px 6px 22px;
   border-radius: 4px;
-  transition: background-color, color, box-shadow, 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filters li:not(:last-child) {
@@ -689,12 +670,14 @@ letter-spacing: 0.03em;
 color: #FFFFFF;
 }
 
-.item:hover .card-overlay {
+.item:hover .card-overlay,
+.item:focus .card-overlay {
   transform: translateY(0);
   opacity: 1;
 }
 
-.item:hover {
+.item:hover,
+.item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
   1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -710,13 +693,11 @@ right: 0;
 bottom: 0;
 background-color: rgba(0, 0, 0, .25);
 z-index: 20;
-
 opacity: 1;
 transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
-  /* visibility: hidden; */
   opacity: 0;
   pointer-events: none;
 }
@@ -735,9 +716,7 @@ transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--white-background-color);
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);
   border-radius: 4px;
-
   transform: translate(-50%, -50%) scale(1);
-
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -757,7 +736,8 @@ position: absolute;
   color: var(--black-text-color)
 }
 
-.btn-close:hover {
+.btn-close:hover,
+.btn-close:focus {
   color: var(--links-color);
 }
 
