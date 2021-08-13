@@ -403,6 +403,7 @@
             </ul>
           </address>
         </div>
+        <!-- Welcome -->
         <div class="welcome">
           <h3 class="welcome-title">Присоединяйтесь</h3>
           <ul class="welcome-list flex list">
@@ -436,17 +437,62 @@
             </li>
           </ul>
         </div>
+        
+        <!-- E-mail spam -->
+        <div class="mail flex">
+          <form class="form-footer js-speaker-form flex">
+            <div class="mail-input">
+              <h3 class="mail-title">Подпишитесь на рассылку</h3>
+              <label for="email"></label>
+              <input type="email" placeholder="E-mail" name="mail" id="email" required>
+            </div>
+            <button class="hero-button flex" type="submit">Подписаться</button>
+          </form>
+        </div>
       </div>
     </footer>
     
         <!-- Modal window -->
     <div data-modal class="backdrop is-hidden">
       <div class="modal">
-          <button data-modal-close class="btn-close">
+        <button data-modal-close class="btn-close">
           <svg class="icon-close" width="11" height="11">
             <use href="./images/icon.svg#icon-close"></use>
           </svg>  
         </button>
+
+
+        <h3 class="form-title">Оставьте свои данные, мы вам перезвоним</h3>
+
+        <form class="form js-speaker-form" autocomplete="off"> 
+      
+          <div class="form-field">
+            <label for="name-modal" class="form-label">Имя</label>
+            <input type="text" name="name" id="name-modal" class="form-input" required autocomplit="name">
+          </div>
+
+          <div class="form-field">
+            <label for="tel-modal">Телефон</label>
+            <input type="tel" name="tel" id="tel-modal" required autocomplete="tel">           
+          </div>
+
+          <div class="form-field">
+            <label for="mail-modal">Почта</label>
+            <input type="email" name="email" id="mail-modal" autocomplete="email">          
+          </div>
+
+          <div class="form-field">
+            <label for="comment-modal">Комментарий</label>
+            <textarea name="comment-modal" placeholder="Введите текст" id="comment-modal" rows="10" autocomplete="off"></textarea>
+          </div>
+
+          <div class="license">
+            <input type="checkbox" name="license" id="license">
+            <label for="license">Соглашаюсь с рассылкой и принимаю Условия договора</label>
+          </div>  
+
+          <button class="hero-button" type="submit">Отправить</button>
+        </form>
       </div>
     </div>
     
@@ -461,5 +507,22 @@
 
       document.body.style.paddingTop = `${pageHeaderHeight}px`;
     </script>
+
+    <script>
+      (() => {
+        document
+          .querySelector('.js-speaker-form')
+          .addEventListener('submit', e => {
+          e.preventDefault();
+
+          new FormData(e.currentTarget).forEach((value, name) =>
+          console.log(`${name}: ${value}`),
+        );
+
+        e.currentTarget.reset();
+        });
+      })();
+    </script>
+  
   </body>
 </html>
